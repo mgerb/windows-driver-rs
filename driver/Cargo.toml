@@ -1,0 +1,25 @@
+[package]
+name = "driver"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = []
+winreg = ["dep:winreg"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+
+[dependencies]
+kernel = { path = "../kernel" }
+log = "0.4.17"
+
+[build-dependencies]
+winreg = { version = "0.10.0", optional = true }
+anyhow = "1.0.68"

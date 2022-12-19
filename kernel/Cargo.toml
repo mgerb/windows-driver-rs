@@ -1,0 +1,12 @@
+[package]
+name = "kernel"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ntapi = { version = "0.4.0", default-features = false, features = ["kernel"] }
+winapi = { version = "0.3.9", features = ["everything", "impl-debug", "impl-default"] }
+log = "0.4.17"
+
